@@ -43,20 +43,18 @@ map <Leader>= <C-w>=
 
 
 " BEGIN PERSONAL ADDITIONS
+" =========================================
+
+map <C-n> :NERDTreeToggle<CR>
 
 nnoremap <Leader>b :bp<CR>
 nnoremap <Leader>f :bn<CR>
 
-" Some defaults for CtrlP
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$',
-  \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
-  \ }
-
-
 " Easier non-interactive command insertion
 nnoremap <Space> :
 
-" ========== RAILS STUFF FOLLOWS ==========
 " bind control-l to hashrocket
 imap <C-l> <Space>=><Space>
+
+" bind leader-cs to clear search
+map <silent> <Leader>cs :let @/ = ""<CR>

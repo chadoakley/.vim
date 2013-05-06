@@ -9,6 +9,9 @@ set number            " Show line numbers
 set ruler             " Show line and column number
 syntax enable         " Turn on syntax highlighting allowing local overrides
 set encoding=utf-8    " Set default encoding to UTF-8
+set hidden
+
+
 
 ""
 "" Whitespace
@@ -27,12 +30,14 @@ endif
 
 " List chars
 set listchars=""                  " Reset the listchars
-set listchars=tab:\ \             " a tab should display as "  ", trailing whitespace as "."
+set listchars=tab:▸\              " a tab should display as "▸ ", trailing whitespace as "."
 set listchars+=trail:.            " show trailing spaces as dots
+set listchars+=eol:¬
 set listchars+=extends:>          " The character to show in the last column when wrap is
                                   " off and the line continues beyond the right of the screen
 set listchars+=precedes:<         " The character to show in the last column when wrap is
                                   " off and the line continues beyond the right of the screen
+
 
 ""
 "" Searching
@@ -43,12 +48,11 @@ set incsearch   " incremental searching
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
 
-""
-"" Wild settings
-""
 
-" TODO: Investigate the precise meaning of these settings
-" set wildmode=list:longest,list:full
+
+""
+"" Wild settings for CmdT
+""
 
 " Disable output and VCS files
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
@@ -62,6 +66,8 @@ set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
 " Disable temp and backup files
 set wildignore+=*.swp,*~,._*
 
+
+
 ""
 "" Backup and swap files
 ""
@@ -70,15 +76,22 @@ set backupdir^=~/.vim/_backup//    " where to put backup files.
 set directory^=~/.vim/_temp//      " where to put swap files.
 
 
+
+""
 "" BEGIN PERSONAL
+""
 
 color molokai
 set guifont=Monaco:h16
-let g:NERDTreeWinPos = "right"
 set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
 set cpoptions+=$ " puts a $ marker for the end of words/lines in cw/c$ commands
 set go-=L " Removes left hand scroll bar
+
+" NerdTree Settings
+let g:NERDTreeWinPos = "right"
+autocmd vimenter * if !argc() | NERDTree | endif " opens NerdTree automatically if no file specified when vim is opened
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif " closes vim if nerdtree is last open window
 
 " UltiSnips options
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "../../snippets"]
@@ -88,3 +101,7 @@ autocmd User Rails let b:surround_{char2nr('-')} = "<% \r %>"
 
 " This pulls in my keybindings
 source ~/.vim/mappings.vim
+
+" Sets vim gist clipboard destination
+let g:gist_clip_command = 'pbcopy'
+
