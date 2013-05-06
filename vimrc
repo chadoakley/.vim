@@ -90,7 +90,7 @@ set go-=L " Removes left hand scroll bar
 
 " NerdTree Settings
 let g:NERDTreeWinPos = "right"
-autocmd vimenter * if !argc() | NERDTree | endif " opens NerdTree automatically if no file specified when vim is opened
+" autocmd vimenter * if !argc() | NERDTree | endif " opens NerdTree automatically if no file specified when vim is opened
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif " closes vim if nerdtree is last open window
 
 " UltiSnips options
