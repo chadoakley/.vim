@@ -121,7 +121,6 @@ let g:LustyJugglerDefaultMappings = 0
 " NerdTree Settings
 let g:NERDTreeWinPos = "right"
 let NERDTreeShowHidden = 1
-" autocmd vimenter * if !argc() | NERDTree | endif " opens NerdTree automatically if no file specified when vim is opened
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif " closes vim if nerdtree is last open window
 
 " UltiSnips options
