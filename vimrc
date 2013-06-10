@@ -10,8 +10,9 @@ set ruler             " Show line and column number
 syntax enable         " Turn on syntax highlighting allowing local overrides
 set encoding=utf-8    " Set default encoding to UTF-8
 set hidden
-
-
+filetype plugin indent on
+set visualbell        " don't beep
+set noerrorbells
 
 ""
 "" Whitespace
@@ -30,9 +31,8 @@ endif
 
 " List chars
 set listchars=""                  " Reset the listchars
-set listchars=tab:▸\s             " a tab should display as "▸ ", trailing whitespace as "."
+set listchars=tab:▸\ ,eol:¬ " a tab should display as "▸ ", trailing whitespace as "."
 set listchars+=trail:.            " show trailing spaces as dots
-set listchars+=eol:¬
 set listchars+=extends:>          " The character to show in the last column when wrap is
                                   " off and the line continues beyond the right of the screen
 set listchars+=precedes:<         " The character to show in the last column when wrap is
@@ -74,7 +74,34 @@ set wildignore+=*.swp,*~,._*
 
 set backupdir^=~/.vim/_backup//    " where to put backup files.
 set directory^=~/.vim/_temp//      " where to put swap files.
+set nobackup
+set noswapfile
 
+
+""
+"" Folding settings
+""
+
+"" set foldmethod=indent   "fold based on indent
+"" set foldnestmax=10      "deepest fold is 10 levels
+"" set nofoldenable        "dont fold by default
+
+
+""
+"" Powerline settings
+""
+
+let g:Powerline_symbols='fancy'
+" let g:Powerline_theme='skwp'
+" let g:Powerline_colorscheme='skwp'
+
+set laststatus=2 "always show the statusline
+
+""
+"" Syntastic weird balloon issue fix
+""
+
+let g:syntastic_enable_balloons = 0
 
 
 ""
@@ -85,11 +112,15 @@ color molokai
 set guifont=Monaco:h16
 set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
-set cpoptions+=$ " puts a $ marker for the end of words/lines in cw/c$ commands
+" set cpoptions+=$ " puts a $ marker for the end of words/lines in cw/c$ commands
 set go-=L " Removes left hand scroll bar
+
+" Lusty Juggler config
+let g:LustyJugglerDefaultMappings = 0
 
 " NerdTree Settings
 let g:NERDTreeWinPos = "right"
+let NERDTreeShowHidden = 1
 " autocmd vimenter * if !argc() | NERDTree | endif " opens NerdTree automatically if no file specified when vim is opened
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif " closes vim if nerdtree is last open window
 

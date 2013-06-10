@@ -45,10 +45,13 @@ map <Leader>= <C-w>=
 " BEGIN PERSONAL ADDITIONS
 " =========================================
 
-map <C-n> :NERDTreeToggle<CR>
+map <Leader>n :NERDTreeToggle<CR>
 
-nnoremap <Leader>b :bp<CR>
-nnoremap <Leader>f :bn<CR>
+" nnoremap <Leader>b :bp<CR>
+" nnoremap <Leader>f :bn<CR>
+
+" Lust Juggler Bindings
+nnoremap <Leader>b :LustyJuggler<CR>
 
 " Easier non-interactive command insertion
 nnoremap <Space> :
@@ -56,5 +59,20 @@ nnoremap <Space> :
 " bind control-l to hashrocket
 imap <C-l> <Space>=><Space>
 
+" make special buffer closer
+nmap <Leader>bd :bp<bar>bd #<CR>
+
+" grow/shrink window by 10
+nmap <Leader>wgv 10<C-w>+
+nmap <Leader>wsv 10<C-w>-
+nmap <Leader>wgh 10<C-w>>
+nmap <Leader>wsh 10<C-w><
+
+" close git diff window
+map <Leader>dc <C-w><C-h><C-w><C-q>:Gstatus<CR>
+
+" show the yank ring
+map <Leader>yr :YRShow
+
 " bind leader-cs to clear search
-map <silent> <Leader>cs :let @/ = ""<CR>
+" map <silent> <Leader>cs :let @/ = ""<CR> <= apparently this screws up the search history
