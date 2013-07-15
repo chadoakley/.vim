@@ -4,15 +4,17 @@ execute pathogen#infect()
 "" Basic Setup
 ""
 
-set nocompatible      " Use vim, no vi defaults
-set number            " Show line numbers
-set ruler             " Show line and column number
-syntax enable         " Turn on syntax highlighting allowing local overrides
-set encoding=utf-8    " Set default encoding to UTF-8
+set nocompatible       " Use vim, no vi defaults
+set number             " Show line numbers
+set ruler              " Show line and column number
+syntax enable          " Turn on syntax highlighting allowing local overrides
+set encoding=utf-8     " Set default encoding to UTF-8
 set hidden
 filetype plugin indent on
-set visualbell        " don't beep
+set visualbell         " don't beep
 set noerrorbells
+set clipboard+=unnamed " yanks go to clipboard, too
+set timeoutlen=350     " this supposedly makes escape take less time
 
 ""
 "" Whitespace
@@ -82,9 +84,9 @@ set noswapfile
 "" Folding settings
 ""
 
-"" set foldmethod=indent   "fold based on indent
+ set foldmethod=indent   "fold based on indent
 "" set foldnestmax=10      "deepest fold is 10 levels
-"" set nofoldenable        "dont fold by default
+ set nofoldenable        "dont fold by default
 
 
 ""
@@ -98,10 +100,15 @@ let g:Powerline_symbols='fancy'
 set laststatus=2 "always show the statusline
 
 ""
-"" Syntastic weird balloon issue fix
+"" syntastic weird balloon issue fix
 ""
 
 let g:syntastic_enable_balloons = 0
+
+""
+"" Some stuff for ruby debugger
+""
+let g:ruby_debugger_progname = 'mvim'
 
 
 ""
@@ -135,3 +142,6 @@ let g:gist_clip_command = 'pbcopy'
 " This pulls in my keybindings
 source ~/.vim/mappings.vim
 
+
+" Custom Functions
+"

@@ -51,10 +51,11 @@ map <Leader>n :NERDTreeToggle<CR>
 " nnoremap <Leader>f :bn<CR>
 
 " Lust Juggler Bindings
-nnoremap <Leader>b :LustyJuggler<CR>
+nnoremap <Leader>bb :LustyJuggler<CR>
 
 " Easier non-interactive command insertion
 nnoremap <Space> :
+vnoremap <Space> :
 
 " bind control-l to hashrocket
 imap <C-l> <Space>=><Space>
@@ -68,11 +69,12 @@ nmap <Leader>wsv 10<C-w>-
 nmap <Leader>wgh 10<C-w>>
 nmap <Leader>wsh 10<C-w><
 
+" Gstatus setup and run
+nmap <Leader>gs :only<bar>:Gstatus<CR>
 " close git diff window
-map <Leader>dc <C-w><C-h><C-w><C-q>:Gstatus<CR>
+nmap <Leader>dc <C-w><C-h><C-w><C-q>:Gstatus<CR>
 
-" show the yank ring
-map <Leader>yr :YRShow
-
+" map CMD + SHIFT + F to find in project (Ag)
+map <D-F> :Ag 
 " bind leader-cs to clear search
 " map <silent> <Leader>cs :let @/ = ""<CR> <= apparently this screws up the search history
