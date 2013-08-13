@@ -13,5 +13,5 @@ def textmate_var(var, snip):
 endglobal
 
 snippet imt "image_tag"
-`!p textmate_var('TM_RAILS_TEMPLATE_START_RUBY_EXPR', snip)`image_tag "$1${2:.png}" :size => "${3:100}x${4:100}" ${5:${6:, :title => "${7:title}"}${8:, :class => "${9:class}"}}`!p textmate_var('TM_RAILS_TEMPLATE_END_RUBY_EXPR', snip)`
+`!p textmate_var('TM_RAILS_TEMPLATE_START_RUBY_EXPR', snip)`image_tag "$1${2:.png}", :size => "${3:100}x${4:100}"${5:${6:, :title => "${7:title}"}${8:, :class => "${9:class}"}}, :alt => "${9:alt}"`!p textmate_var('TM_RAILS_TEMPLATE_END_RUBY_EXPR', snip)`
 endsnippet

@@ -11,8 +11,10 @@ syntax enable          " Turn on syntax highlighting allowing local overrides
 set encoding=utf-8     " Set default encoding to UTF-8
 set hidden
 filetype plugin indent on
-set visualbell         " don't beep
-set noerrorbells
+""set visualbell         " don't beep
+""set noerrorbells
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
 set clipboard+=unnamed " yanks go to clipboard, too
 set timeoutlen=350     " this supposedly makes escape take less time
 
@@ -84,18 +86,19 @@ set noswapfile
 "" Folding settings
 ""
 
- set foldmethod=indent   "fold based on indent
+"" set foldmethod=indent   "fold based on indent
 "" set foldnestmax=10      "deepest fold is 10 levels
- set nofoldenable        "dont fold by default
+"" set nofoldenable        "dont fold by default
 
 
 ""
 "" Powerline settings
 ""
 
-let g:Powerline_symbols='fancy'
-" let g:Powerline_theme='skwp'
-" let g:Powerline_colorscheme='skwp'
+""let g:Powerline_symbols='fancy'
+""let g:Powerline_theme='skwp'
+""let g:Powerline_colorscheme='skwp'
+let g:airline_powerline_fonts = 1
 
 set laststatus=2 "always show the statusline
 
@@ -116,7 +119,7 @@ let g:ruby_debugger_progname = 'mvim'
 ""
 
 color molokai
-set guifont=Monaco:h16
+set guifont=Monaco\ for\ Powerline:h16
 set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
 " set cpoptions+=$ " puts a $ marker for the end of words/lines in cw/c$ commands
