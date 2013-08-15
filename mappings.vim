@@ -74,7 +74,15 @@ nmap <Leader>gs :only<bar>:Gstatus<CR>
 " close git diff window
 nmap <Leader>dc <C-w><C-h><C-w><C-q>:Gstatus<CR>
 
-" map CMD + SHIFT + F to find in project (Ag)
-map <D-F> :Ag 
+" map CTRL + SHIFT + F to find in project (Ag)
+map <C-F> :Ag 
 " bind leader-cs to clear search
 " map <silent> <Leader>cs :let @/ = ""<CR> <= apparently this screws up the search history
+
+" Tmux Navigator mappings
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <C-l> :TmuxNavigateRight<cr>

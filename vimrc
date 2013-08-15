@@ -15,7 +15,9 @@ filetype plugin indent on
 ""set noerrorbells
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
-set clipboard+=unnamed " yanks go to clipboard, too
+if $TMUX == ''
+  set clipboard+=unnamed " yanks go to clipboard, too
+endif
 set timeoutlen=350     " this supposedly makes escape take less time
 
 ""
@@ -99,6 +101,7 @@ set noswapfile
 ""let g:Powerline_theme='skwp'
 ""let g:Powerline_colorscheme='skwp'
 let g:airline_powerline_fonts = 1
+set ttimeoutlen=50
 
 set laststatus=2 "always show the statusline
 
