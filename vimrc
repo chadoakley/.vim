@@ -148,6 +148,9 @@ let g:gist_clip_command = 'pbcopy'
 " This pulls in my keybindings
 source ~/.vim/mappings.vim
 
+"Some random vim rspec config
+let g:rspec_command = "Dispatch zeus rspec {spec}"
+
 
 " Custom Functions
 "
