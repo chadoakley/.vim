@@ -84,6 +84,8 @@ nmap <Leader>dc <C-w><C-h><C-w><C-q>:Gstatus<CR>
 map <C-F> :Ag 
 " bind leader-cs to clear search
 " map <silent> <Leader>cs :let @/ = ""<CR> <= apparently this screws up the search history
+"
+nmap <Leader>cp :let g:ctrlp_root_markers = [@%]<CR>
 
 " Tmux Navigator mappings
 let g:tmux_navigator_no_mappings = 1
