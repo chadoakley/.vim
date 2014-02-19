@@ -41,9 +41,11 @@ nmap <leader>hs :set hlsearch! hlsearch?<CR>
 map <Leader>= <C-w>=
 
 
-
 " BEGIN PERSONAL ADDITIONS
 " =========================================
+" Special vim buffer for copy between tmux panes
+map <leader>c :w! ~/.vimbuffer<CR>
+map <leader>v :r ~/.vimbuffer<CR>
 
 " Rspec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
