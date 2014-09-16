@@ -14,7 +14,7 @@ set hidden
 filetype plugin indent on
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
-""set clipboard=unnamed " yanks go to clipboard, too
+set clipboard=unnamed " yanks go to clipboard, too
 set timeoutlen=350     " this supposedly makes escape take less time
 set cc=80
 
@@ -23,8 +23,8 @@ set cc=80
 ""
 
 set nowrap                        " don't wrap lines
-set tabstop=4                     " a tab is two spaces
-set shiftwidth=4                  " an autoindent (with <<) is two spaces
+set tabstop=2                     " a tab is two spaces
+set shiftwidth=2                  " an autoindent (with <<) is two spaces
 set expandtab                     " use spaces, not tabs
 set list                          " Show invisible characters
 set backspace=indent,eol,start    " backspace through everything in insert mode
@@ -35,7 +35,7 @@ endif
 
 " List chars
 set listchars=""                  " Reset the listchars
-set listchars=tab:▸\ ,eol:¬ " a tab should display as "▸ ", trailing whitespace as "."
+set listchars=tab:▸\ ,eol:¬       " a tab should display as "▸ ", end of line a "¬"
 set listchars+=trail:.            " show trailing spaces as dots
 set listchars+=extends:>          " The character to show in the last column when wrap is
                                   " off and the line continues beyond the right of the screen
