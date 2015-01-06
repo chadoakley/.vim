@@ -47,26 +47,11 @@ map <Leader>= <C-w>=
 map <leader>c :w! ~/.vimbuffer<CR>
 map <leader>v :r ~/.vimbuffer<CR>
 
-" Rspec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-
 map <Leader>n :NERDTreeToggle<CR>
-
-" nnoremap <Leader>b :bp<CR>
-" nnoremap <Leader>f :bn<CR>
-
-" Lust Juggler Bindings
-nnoremap <Leader>bb :LustyJuggler<CR>
 
 " Easier non-interactive command insertion
 nnoremap <Space> :
 vnoremap <Space> :
-
-" bind control-l to hashrocket
-imap <C-l> <Space>=><Space>
 
 " make special buffer closer
 nmap <Leader>bd :bp<bar>bd #<CR>
