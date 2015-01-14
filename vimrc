@@ -52,22 +52,6 @@ set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
 
 ""
-"" Wild settings for CmdT
-""
-
-" Disable output and VCS files
-set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
-
-" Disable archive files
-set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
-
-" Ignore bundler and sass cache
-set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
-
-" Disable temp and backup files
-set wildignore+=*.swp,*~,._*
-
-""
 "" Backup and swap files
 ""
 
@@ -80,22 +64,17 @@ set undodir=~/.vim/_backup//
 set undofile
 
 ""
-"" Powerline settings
-""
-
-let g:airline_powerline_fonts = 1
-set ttimeoutlen=50
-set laststatus=2 "always show the statusline
-
-""
 "" syntastic weird balloon issue fix
 ""
 
-let g:syntastic_enable_balloons = 0
+"" let g:syntastic_enable_balloons = 0
 
 ""
 "" BEGIN PERSONAL
 ""
+for f in split(glob('~/.vim/plugin/settings/*.vim'), '\n')
+    exe 'source' f
+endfor
 
 color molokai
 set background=dark
@@ -104,14 +83,6 @@ set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
 " set cpoptions+=$ " puts a $ marker for the end of words/lines in cw/c$ commands
 set go-=L " Removes left hand scroll bar
-
-" NerdTree Settings
-let g:NERDTreeWinPos = "right"
-let NERDTreeShowHidden = 1
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif " closes vim if nerdtree is last open window
-
-"" Syntastic
-:let g:syntastic_less_checkers = ['recess']
 
 " This pulls in my keybindings
 source ~/.vim/mappings.vim
