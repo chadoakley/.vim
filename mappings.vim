@@ -48,6 +48,7 @@ map <leader>c :w! ~/.vimbuffer<CR>
 map <leader>v :r ~/.vimbuffer<CR>
 
 map <Leader>n :NERDTreeToggle<CR>
+map <Leader>t :NERDTreeToggle<CR>
 
 " Easier non-interactive command insertion
 nnoremap <Space> :
@@ -73,6 +74,8 @@ map <C-F> :Ag
 " map <silent> <Leader>cs :let @/ = ""<CR> <= apparently this screws up the search history
 "
 nmap <Leader>cp :let g:ctrlp_root_markers = [@%]<CR>
+" Ctrl-p git ignore
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " Tmux Navigator mappings
 let g:tmux_navigator_no_mappings = 1
@@ -81,3 +84,6 @@ nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+
+" QUIT EVERYTHING
+map <leader>qa :qa!<CR>

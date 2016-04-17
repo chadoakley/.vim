@@ -55,9 +55,6 @@
 [submodule "bundle/webapi-vim"]
 	path = bundle/webapi-vim
 	url = https://github.com/mattn/webapi-vim.git
-[submodule "bundle/Shougo-neocomplete"]
-	path = bundle/Shougo-neocomplete
-	url = git@github.com:Shougo/neocomplete.vim.git
 [submodule "bundle/davidhalter-jedi-vim"]
 	path = bundle/davidhalter-jedi-vim
 	url = git@github.com:davidhalter/jedi-vim.git
